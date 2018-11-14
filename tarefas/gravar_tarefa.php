@@ -6,16 +6,28 @@
     if($_POST["status"] == "on"){
         $status = 1;
     }
+    $id = $_POST["id"];
 
-    $sql = "INSERT INTO tarefas ";
-    $sql .= " (nome, detalhes, status) ";
-    $sql .= " VALUES ";
-    $sql .= " ('$nome', '$detalhes', $status) ";
+
+    if($id < 1){
+        $sql = "INSERT INTO tarefas ";
+        $sql .= " (nome, detalhes, status) ";
+        $sql .= " VALUES ";
+        $sql .= " ('$nome', '$detalhes', $status) ";
+    }else{
+        $sql = " UPDATE tarefas ";
+        $sql .= " SET ";
+        $sql .= " nome = '$nome' ";
+        $sql .= " ,detalhes = '$detalhes' ";
+        $sql .= " ,status = $status ";
+        $sql .= " WHERE ";
+        $sql .= " id = $id ";
+    }
 
     require_once("criar_conexao.php");
 
     if($conn->query($sql) === TRUE){
-        echo "Registro inserido com sucesso";
+        echo "Registro gravado com sucesso";
     }else{
         echo "Erro ao tentar executar a query:<br>";
         echo $sql."<br><br>";

@@ -45,6 +45,7 @@
                     <th>Detalhes</th>
                     <th>Status</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 <?php
             while($row = $result->fetch_assoc()){
@@ -56,6 +57,7 @@
                 echo "<td>";
                 echo ($row["status"]==0)?"A fazer":"Feita";
                 echo "<td><a href='excluir_tarefa.php?id=".$row["id"]."'>Excluir</a></td>";
+                echo "<td><a href='incluir_tarefa.php?id=".$row["id"]."'>Alterar</a></td>";
                 echo "</tr>";
             }
             
