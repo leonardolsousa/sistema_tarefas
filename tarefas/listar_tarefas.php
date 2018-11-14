@@ -44,6 +44,7 @@
                     <th>Nome</th>
                     <th>Detalhes</th>
                     <th>Status</th>
+                    <th></th>
                 </tr>
                 <?php
             while($row = $result->fetch_assoc()){
@@ -52,11 +53,15 @@
                 echo "<td>".$row["id"]."</td>";
                 echo "<td>".$row["nome"]."</td>";
                 echo "<td>".$row["detalhes"]."</td>";
-                echo "<td>".$row["status"]."</td>";
+                echo "<td>";
+                echo ($row["status"]==0)?"A fazer":"Feita";
+                echo "<td><a href='excluir_tarefa.php?id=".$row["id"]."'>Excluir</a></td>";
                 echo "</tr>";
             }
             
-            echo "</table>";
+            ?>
+            </table>
+            <?php
             
         }else{
             echo "retornou nada";
