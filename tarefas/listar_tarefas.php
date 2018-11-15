@@ -1,4 +1,6 @@
 <?php
+    
+
     header("Content-type:text/html; charset=ISO-8859-1");
 
      $key = $_POST["key"];
@@ -85,3 +87,5 @@
         ?>
     </body>
 </html>
+<br><br>
+<a href="logout.php">Logout</a>

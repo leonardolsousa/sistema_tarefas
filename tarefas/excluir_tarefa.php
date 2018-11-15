@@ -1,5 +1,6 @@
 <?php
-
+    require_once("autenticacao.php");
+    
     $id = $_GET["id"];
 
     $sql = "DELETE FROM tarefas WHERE id = ".$id;

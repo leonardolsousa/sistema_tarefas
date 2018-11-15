@@ -1,5 +1,6 @@
 <?php
-
+    require_once("autenticacao.php");
+    
     $id = $_GET["id"];
 
     require_once("criar_conexao.php");

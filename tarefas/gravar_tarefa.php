@@ -1,4 +1,5 @@
 <?php
+    require_once("autenticacao.php");
 
     $nome = $_POST["nome"];
     $detalhes = $_POST["detalhes"];
