@@ -16,7 +16,7 @@
         $detalhes = $row["detalhes"];
         $status = $row["status"];
 
-    }elseif($id > 0){
+    }elseif($id > 0) {
 
         echo "Não existe tarefa com o ID: ".$id."<br><br>";
         echo "<a href='index.php'>Voltar</a><br><br>";
